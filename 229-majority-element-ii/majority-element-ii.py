@@ -1,6 +1,6 @@
 class Solution:
     def majorityElement(self, nums: List[int]) -> List[int]:
-        size = len(nums)//3+1
+        size = len(nums)//3
         ls = []
         count1 , count2 , element1 , element2 = 0 , 0 , 0 , 0
         for i in nums:
@@ -23,8 +23,8 @@ class Solution:
                 count1+=1
             elif i == element2:
                 count2+=1
-        if count1>=size:
+        if count1>size:
             ls.append(element1)
-        if count2>=size:
+        if count2>size:
             ls.append(element2)
         return ls
