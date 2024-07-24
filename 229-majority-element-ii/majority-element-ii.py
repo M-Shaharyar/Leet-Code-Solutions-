@@ -1,6 +1,6 @@
 class Solution:
     def majorityElement(self, nums: List[int]) -> List[int]:
-        size = len(nums)//3
+        size = len(nums)/3
         ls = []
         count1 , count2 , element1 , element2 = 0 , 0 , 0 , 0
         for i in nums:
