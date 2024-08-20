@@ -2,15 +2,10 @@ class Solution:
     def isPalindrome(self, x: int) -> bool:
         if x < 0:
             return False
-        my_list = []
-        val = 0
-        while x > 0:
-            val = x % 10
-            x = x // 10
-            my_list.append(val)
-        left , right = 0 , len(my_list) - 1
-        while left < right :
-            if my_list[left] != my_list[right]:
-                return False
-            left , right = left + 1 , right - 1
-        return True
+        res_num = 0
+        temp = x
+        while temp > 0:
+            val = temp % 10
+            temp = temp // 10
+            res_num = res_num * 10 + val
+        return res_num == x
