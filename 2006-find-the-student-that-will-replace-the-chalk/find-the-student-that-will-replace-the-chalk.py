@@ -3,7 +3,7 @@ class Solution:
         total = sum(chalk)
         k = k % total
         i = 0
-        while k >= 0:
+        while k >= chalk[i]:
             k -= chalk[i]
             i += 1
-        return i - 1
+        return i
