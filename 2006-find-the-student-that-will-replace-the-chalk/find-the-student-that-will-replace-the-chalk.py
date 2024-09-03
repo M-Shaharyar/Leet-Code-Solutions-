@@ -5,7 +5,6 @@ class Solution:
         i = 0
         while k >= 0:
             k -= chalk[i]
-            print(k)
             i += 1
         return i-1 
         
