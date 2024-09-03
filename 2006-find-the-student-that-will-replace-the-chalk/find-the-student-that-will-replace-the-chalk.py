@@ -5,6 +5,5 @@ class Solution:
         i = 0
         while k >= 0:
             k -= chalk[i]
-            if k >= 0:
-                i += 1
-        return i
+            i += 1
+        return i - 1
