@@ -5,9 +5,7 @@ class Solution:
         i = 0
         while k >=  0:
             k -= chalk[i]  # 5 -= 3 --> 2 
-            i += 1         # i = 1,  k = 2
-        return i - 1       #  2 -= 4 --> -2
-                            #   1 += 1   ---> 2
-
+            i += 1
+        return i - 1
 
        
