@@ -4,7 +4,5 @@ class Solution:
         while first < len(s) and second < len(t):
             if s[first] == t[second]:
                 first += 1
-                second += 1
-            elif s[first] != t[second]:
-                second += 1
+            second += 1
         return first == len(s)
