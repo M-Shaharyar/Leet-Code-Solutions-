@@ -3,7 +3,7 @@ class Solution:
         """
         Do not return anything, modify nums in-place instead.
         """
-        res = [0] * len(nums)
+        res = [10] * len(nums)
         size = len(nums)
         for i in range(len(nums)):
             res[(i+k) % size] = nums[i]
