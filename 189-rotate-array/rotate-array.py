@@ -9,5 +9,5 @@ class Solution:
             res[ (i+k) % size] = nums[i]
         for i in range(len(res)):
             nums[i] = res[i]
-                    
+        return nums
         
