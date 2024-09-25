@@ -1,10 +1,10 @@
 class Solution:
     def makeGood(self, s: str) -> str:
-        stack =[]
+        stack = []
         i = 0
         while i < len(s):
             if (
-                stack and 
+                stack and
                 stack[-1] != s[i] and
                 stack[-1].lower() == s[i].lower()
             ):
@@ -13,3 +13,4 @@ class Solution:
                 stack.append(s[i])
             i += 1
         return "".join(stack)
+
