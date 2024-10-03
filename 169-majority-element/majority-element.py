@@ -4,6 +4,7 @@ class Solution:
         res , maxCount = 0 , 0 
         for n in nums:
             count[n] = 1 + count.get(n,0)
-            res = n if count[n] > maxCount else res
+            if count[n] > maxCount:
+                res = n
             maxCount = max(count[n],maxCount)
         return res
