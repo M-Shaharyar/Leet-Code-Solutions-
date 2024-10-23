@@ -3,10 +3,10 @@ class Solution:
         stack = []
 
         for i in operations:
-            if i == "+":
-                stack.append(stack[-1] + stack[-2])
-            elif i == "D":
+            if i == "D":
                 stack.append(2*stack[-1])
+            elif i == "+":
+                stack.append(stack[-1] + stack[-2])
             elif i == "C":
                 stack.pop()
             else:
