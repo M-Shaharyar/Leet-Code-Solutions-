@@ -1,14 +1,18 @@
-class Solution:
-    def judgeSquareSum(self, c: int) -> bool:
-        squareroot = set()
+class Solution(object):
+    def judgeSquareSum(self, c):
+        """
+        :type c: int
+        :rtype: bool
+        """
+        left = 0 
+        right = int(sqrt(c))
 
-        for i in range(int(sqrt(c)) + 1):
-            squareroot.add(i * i)
-
-        a = 0
-        while a * a <= c:
-            target = c - a * a
-            if target in squareroot:
+        while(left <= right ):
+            sumVal = left * left + right * right 
+            if(sumVal > c):
+                right -=1
+            elif(sumVal < c):
+                left +=1
+            else:
                 return True
-            a += 1
         return False
