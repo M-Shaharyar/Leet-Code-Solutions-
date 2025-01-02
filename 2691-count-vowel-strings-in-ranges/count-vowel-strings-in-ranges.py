@@ -1,29 +1,18 @@
 class Solution:
     def vowelStrings(self, words: List[str], queries: List[List[int]]) -> List[int]:
-        def helperfunction(word):
-            vowels  = {'a','e','i','o','u'}
-            return word[0] in vowels  and word[-1] in vowels
+        vowel_set = set("aeiou")
 
-        def prefix_sum(words):
-            n = len(words)
-            prefix  = [0] * n
-            prefix[0] = 1 if helperfunction(words[0]) else 0
+        prefix_cnt = [0] * (len(words) + 1)
+        prev = 0
+        for i, w in enumerate(words):
+            if w[0] in vowel_set and w[-1] in vowel_set:
+                prev += 1
+            prefix_cnt[i + 1] = prev
 
-            for i in range(1,n):
-                prefix[i] = prefix[i-1] + (1 if helperfunction(words[i]) else 0)
-            return prefix
+        res = [0]*len(queries)
 
-        def answer_quries(prefix,quries):
-            result = []
-            for li, ri in quries:
-                if li == 0:
-                    result.append(prefix[ri])
-                else:
-                    result.append(prefix[ri] - prefix[li - 1])
-            return result
-        prefix = prefix_sum(words)
-        return answer_quries(prefix,queries)
-    
-    
+        for i,q in enumerate(queries):
+            l,r = q
+            res[i] = prefix_cnt[r+1] - prefix_cnt[l]
+        return res
 
-        
